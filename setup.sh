@@ -11,6 +11,17 @@ BASHRC_FILE=~/.bashrc
 SOURCE_ALIAS_LINE="source \"$ALIASES_FILE\""
 SOURCE_EXPORT_LINE="source \"$EXPORTS_FILE\""
 
+# Install bash-git-prompt if not already present
+if [ ! -d ~/.bash-git-prompt ]; then
+    echo "Cloning bash-git-prompt..."
+    git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+    echo "Done."
+else
+    echo "bash-git-prompt already installed, pulling latest changes..."
+    (cd ~/.bash-git-prompt && git pull)
+    echo "Done."
+fi
+
 # Add sourcing of aliases to ~/.bashrc if not already present
 if ! grep -Fxq "$SOURCE_ALIAS_LINE" "$BASHRC_FILE"; then
     echo "Adding aliases to $BASHRC_FILE"
