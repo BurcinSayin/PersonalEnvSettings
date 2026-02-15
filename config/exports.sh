@@ -11,6 +11,7 @@ fi
 # Add Android SDK platfor tools to PATH if it exists
 if [ -d "$HOME/Android/Sdk/platform-tools" ] && [ "$(ls -A "$HOME/Android/Sdk/platform-tools")" ]; then
   export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
+  export ANDROID_HOME="$HOME/Android/Sdk"
 fi
 
 ## Add git prompt
