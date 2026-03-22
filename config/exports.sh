@@ -2,6 +2,8 @@
 # Example export:
 # export EDITOR=vim
 
+# export GITHUB_TOKEN=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
+
 # Add Flutter SDK to PATH if it exists
 if [ -d "$HOME/Android/flutter/bin" ] && [ "$(ls -A "$HOME/Android/flutter/bin")" ]; then
   export PATH="$HOME/Android/flutter/bin:$PATH"
